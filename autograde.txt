@@ -1,0 +1,884 @@
+== CS 241 Autograder Note: ==
+This autograder is a preliminary assessment of your program's correctness. Your
+grade may change UP OR DOWN based on the CORRECTNESS OF YOUR PROGRAM. We make every effort to ensure
+that our autograder is 'smart' enough to not count off for simple things like grammar but, in doing so,
+we may inadvertently allow for incorrect code to be counted as correct. If we have to change our script
+to better reflect the CORRECTNESS OF YOUR PROGRAM, we will run the script on EVERY PROGRAM and update
+EVERY AUTOGRADER OUTPUT to ensure fairness to all students. Thanks for understanding! - CS 241 Staff
+
+(Please note, this autograder does not reflect a late submission penalty. This will be applied on Compass.)
+
+
+=== MPx (Client) Autograder Summary ===
+Program Execution Score (90% weight): 50.0/55.0 (90.90909%)
+Program Heap Freed (5% weight): PASSED (100%)
+Correct Memory Usage (5% weight): FAILED (0%)
+
+
+=== MPx (Client) Scoring Breakdown ===
+--- Details for "MPx (Client)" ---
+Total "MPx (Client)" Sub-Score: 50.0
+	... Details for "MPx (Client)", "Is the result of the basic test correct?"...
+	Total "MPx (Client)", "Is the result of the basic test correct?" Sub-Score: 10.0
+		[+10]: Expected output found!
+	... Details for "MPx (Client)", "Is the persistency working?"...
+	Total "MPx (Client)", "Is the persistency working?" Sub-Score: 10.0
+		[+10]: Expected output found!
+	... Details for "MPx (Client)", "Is the GET operation performed correctly?"...
+	Total "MPx (Client)", "Is the GET operation performed correctly?" Sub-Score: 5.0
+		[+5]: GET request succeeded on the server side!
+	... Details for "MPx (Client)", "Is an erroneous GET operation performed correctly?"...
+	Total "MPx (Client)", "Is an erroneous GET operation performed correctly?" Sub-Score: 5.0
+		[+5]: GET request succeeded on the server side!
+	... Details for "MPx (Client)", "Is the PUT operation performed correctly?"...
+	Total "MPx (Client)", "Is the PUT operation performed correctly?" Sub-Score: 5.0
+		[+5]: PUT request succeeded on the server side!
+	... Details for "MPx (Client)", "Is an erroneous PUT operation performed correctly?"...
+	Total "MPx (Client)", "Is an erroneous PUT operation performed correctly?" Sub-Score: 5.0
+		[+5]: PUT request succeeded on the server side!
+	... Details for "MPx (Client)", "Is an UPDATE operation performed correctly?"...
+	Total "MPx (Client)", "Is an UPDATE operation performed correctly?" Sub-Score: 5.0
+		[+5]: UPDATE request succeeded on the server side!
+	... Details for "MPx (Client)", "Is a DELETE operation performed correctly?"...
+	Total "MPx (Client)", "Is a DELETE operation performed correctly?" Sub-Score: 0.0
+		Expected output NOT found! Will try this exact same test again, up to three times!
+		Expected output NOT found! Will try this exact same test again, up to three times!
+		Expected output NOT found! Will try this exact same test again, up to three times!
+	... Details for "MPx (Client)", "Is an erroneous DELETE operation performed correctly?"...
+	Total "MPx (Client)", "Is an erroneous DELETE operation performed correctly?" Sub-Score: 5.0
+		[+5]: DELETE request succeeded on the server side!
+
+
+
+
+=== MPx (Client) Raw Autograder Log ===
+[config]: Initializing the AssignmentGrader class "mpx_client"...
+[config]: Initializing the SegmentGrader class "mpx_client_1". Loading...
+[config]: Assignment initalization complete!
+[info]: The submission in "../../svn/cs241/cliu78" for assignment "mpx_client" is ready to be graded. Running grading tasks...
+[info]: Beginning to grade assignment "MPx (Client)"...
+[fine]: Launching assignment-specific code for "MPx (Client)", "MPx (Client)"...
+[finer]: Running command [make] with a timeout of 60000ms.
+[finer]: Completed execution of "make" with exit code = 0.
+[finest]: [stdout:1]: gcc -c -g -W -Wall -I. -Ilibs -Ilibjson -Ilibds libmapreduce.c -o libmapreduce.o -Llibjson -lpthread -ljson
+[finest]: [stdout:2]: gcc -c -g -W -Wall -I. -Ilibs -Ilibjson -Ilibds libds/libds.c -o libds.o -Llibjson -lpthread -ljson
+[finest]: [stdout:3]: gcc -c -g -W -Wall -I. -Ilibs -Ilibjson -Ilibds libs/libhttp.c -o libhttp.o -Llibjson -lpthread -ljson
+[finest]: [stdout:4]: gcc -c -g -W -Wall -I. -Ilibs -Ilibjson -Ilibds libs/libdictionary.c -o libdictionary.o -Llibjson -lpthread -ljson
+[finest]: [stdout:5]: gcc -g -W -Wall libmapreduce.o libds.o libhttp.o libdictionary.o test1.c -o test1 -Llibjson -lpthread -ljson
+[finest]: [stdout:6]: chmod +x example_nosql_server
+[finest]: [stdout:7]: gcc -g -W -Wall libmapreduce.o libds.o libhttp.o libdictionary.o test2.c -o test2 -Llibjson -lpthread -ljson
+[finest]: [stderr:1]: libmapreduce.c: In function âmapreduce_reduce_allâ:
+[finest]: [stderr:2]: libmapreduce.c:297: warning: unused parameter âmrâ
+[finest]: [stderr:3]: test2.c: In function âmapâ:
+[finest]: [stderr:4]: test2.c:16: warning: unused parameter âfdâ
+[finest]: [stderr:5]: test2.c:16: warning: unused parameter âdataâ
+[finest]: [stderr:6]: test2.c: In function âreduceâ:
+[finest]: [stderr:7]: test2.c:21: warning: unused parameter âvalue1â
+[finest]: [stderr:8]: test2.c:21: warning: unused parameter âvalue2â
+[finest]: [stderr:9]: test2.c: In function âmainâ:
+[finest]: [stderr:10]: test2.c:52: warning: assignment discards qualifiers from pointer target type
+[finest]: [stderr:11]: test2.c:69: warning: assignment discards qualifiers from pointer target type
+[fine]: Launching segment-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)"...
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is the result of the basic test correct?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 21538] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test1 localhost 21538] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test1" with exit code = 0.
+[finest]: [stdout:1]: it is a null
+[finest]: [stdout:2]: put send:{"Value": "31"}
+[finest]: [stdout:3]: string value is:31
+[finest]: [stdout:4]: revision number is:1
+[finest]: [stdout:5]: return value is:31
+[finest]: [stdout:6]: letters: 31
+[finer]: Testing for string "letters: 31" in process output.
+[finer]: String found in line 6 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finest]: [stderr:1]: HTTP: GET /letters HTTP/1.1
+[finest]: [stderr:2]: NoSQL: GET request for "letters"
+[finest]: [stderr:3]: NoSQL (GET): "letters" does not exist in the database
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 404 Not Found
+[finest]: [stderr:5]: Content-Type: applications/json
+[finest]: [stderr:6]: Content-Length: 72
+[finest]: [stderr:7]: Connection: keep-alive
+[finest]: [stderr:8]: 
+[finest]: [stderr:9]: {"error":"not found","reason":"The key does not exist in the database."}<<
+[finest]: [stderr:10]: HTTP: PUT /letters HTTP/1.1
+[finest]: [stderr:11]: NoSQL: PUT request for "letters"
+[finest]: [stderr:12]: NoSQL (PUT): Adding to the database "letters"="31".
+[finest]: [stderr:13]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:14]: Etag: "1"
+[finest]: [stderr:15]: Content-Type: applications/json
+[finest]: [stderr:16]: Content-Length: 36
+[finest]: [stderr:17]: Connection: keep-alive
+[finest]: [stderr:18]: 
+[finest]: [stderr:19]: {"ok":true,"id":"letters","rev":"1"}<<
+[finest]: [stderr:20]: HTTP: GET /letters HTTP/1.1
+[finest]: [stderr:21]: NoSQL: GET request for "letters"
+[finest]: [stderr:22]: NoSQL (GET): "letters" contains the value "31" (revision: 1)
+[finest]: [stderr:23]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:24]: Etag: "1"
+[finest]: [stderr:25]: Content-Type: applications/json
+[finest]: [stderr:26]: Content-Length: 41
+[finest]: [stderr:27]: Connection: keep-alive
+[finest]: [stderr:28]: 
+[finest]: [stderr:29]: {"_id":"letters","_rev":"1","Value":"31"}<<
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is the persistency working?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 13521] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test1 localhost 13521] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test1" with exit code = 0.
+[finest]: [stdout:1]: it is a null
+[finest]: [stdout:2]: put send:{"Value": "31"}
+[finest]: [stdout:3]: string value is:31
+[finest]: [stdout:4]: revision number is:1
+[finest]: [stdout:5]: return value is:31
+[finest]: [stdout:6]: letters: 31
+[finer]: Running command [mpx_client-autograde/test1 localhost 13521] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test1" with exit code = 0.
+[finest]: [stdout:1]: string value is:31
+[finest]: [stdout:2]: revision number is:1
+[finest]: [stdout:3]: return value is:31
+[finest]: [stdout:4]: update send:{"Value": "62", "_rev": "1"}
+[finest]: [stdout:5]: update rec body is :{"ok":true,"id":"letters","rev":"2"}
+[finest]: [stdout:6]: recv body is ok
+[finest]: [stdout:7]: revision number is:2!!!!
+[finest]: [stdout:8]: string value is:62
+[finest]: [stdout:9]: revision number is:2
+[finest]: [stdout:10]: return value is:62
+[finest]: [stdout:11]: letters: 62
+[finer]: Testing for string "letters: 62" in process output.
+[finer]: String found in line 11 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: GET /letters HTTP/1.1
+[finest]: [stderr:2]: NoSQL: GET request for "letters"
+[finest]: [stderr:3]: NoSQL (GET): "letters" does not exist in the database
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 404 Not Found
+[finest]: [stderr:5]: Content-Type: applications/json
+[finest]: [stderr:6]: Content-Length: 72
+[finest]: [stderr:7]: Connection: keep-alive
+[finest]: [stderr:8]: 
+[finest]: [stderr:9]: {"error":"not found","reason":"The key does not exist in the database."}<<
+[finest]: [stderr:10]: HTTP: PUT /letters HTTP/1.1
+[finest]: [stderr:11]: NoSQL: PUT request for "letters"
+[finest]: [stderr:12]: NoSQL (PUT): Adding to the database "letters"="31".
+[finest]: [stderr:13]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:14]: Etag: "1"
+[finest]: [stderr:15]: Content-Type: applications/json
+[finest]: [stderr:16]: Content-Length: 36
+[finest]: [stderr:17]: Connection: keep-alive
+[finest]: [stderr:18]: 
+[finest]: [stderr:19]: {"ok":true,"id":"letters","rev":"1"}<<
+[finest]: [stderr:20]: HTTP: GET /letters HTTP/1.1
+[finest]: [stderr:21]: NoSQL: GET request for "letters"
+[finest]: [stderr:22]: NoSQL (GET): "letters" contains the value "31" (revision: 1)
+[finest]: [stderr:23]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:24]: Etag: "1"
+[finest]: [stderr:25]: Content-Type: applications/json
+[finest]: [stderr:26]: Content-Length: 41
+[finest]: [stderr:27]: Connection: keep-alive
+[finest]: [stderr:28]: 
+[finest]: [stderr:29]: {"_id":"letters","_rev":"1","Value":"31"}<<
+[finest]: [stderr:30]: HTTP: GET /letters HTTP/1.1
+[finest]: [stderr:31]: NoSQL: GET request for "letters"
+[finest]: [stderr:32]: NoSQL (GET): "letters" contains the value "31" (revision: 1)
+[finest]: [stderr:33]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:34]: Etag: "1"
+[finest]: [stderr:35]: Content-Type: applications/json
+[finest]: [stderr:36]: Content-Length: 41
+[finest]: [stderr:37]: Connection: keep-alive
+[finest]: [stderr:38]: 
+[finest]: [stderr:39]: {"_id":"letters","_rev":"1","Value":"31"}<<
+[finest]: [stderr:40]: HTTP: PUT /letters HTTP/1.1
+[finest]: [stderr:41]: NoSQL: PUT request for "letters"
+[finest]: [stderr:42]: NoSQL (PUT): Updating database "letters"="62" using revision 1.
+[finest]: [stderr:43]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:44]: Etag: "2"
+[finest]: [stderr:45]: Content-Type: applications/json
+[finest]: [stderr:46]: Content-Length: 36
+[finest]: [stderr:47]: Connection: keep-alive
+[finest]: [stderr:48]: 
+[finest]: [stderr:49]: {"ok":true,"id":"letters","rev":"2"}<<
+[finest]: [stderr:50]: HTTP: GET /letters HTTP/1.1
+[finest]: [stderr:51]: NoSQL: GET request for "letters"
+[finest]: [stderr:52]: NoSQL (GET): "letters" contains the value "62" (revision: 2)
+[finest]: [stderr:53]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:54]: Etag: "2"
+[finest]: [stderr:55]: Content-Type: applications/json
+[finest]: [stderr:56]: Content-Length: 41
+[finest]: [stderr:57]: Connection: keep-alive
+[finest]: [stderr:58]: 
+[finest]: [stderr:59]: {"_id":"letters","_rev":"2","Value":"62"}<<
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is the GET operation performed correctly?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 29894] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 localhost 29894 GET] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "new_value"}
+[finest]: [stdout:2]: string value is:new_value
+[finest]: [stdout:3]: revision number is:1
+[finest]: [stdout:4]: return value is:new_value
+[finest]: [stdout:5]: Correct value returned
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String found in line 5 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="new_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: GET /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: GET request for "new_key"
+[finest]: [stderr:13]: NoSQL (GET): "new_key" contains the value "new_value" (revision: 1)
+[finest]: [stderr:14]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:15]: Etag: "1"
+[finest]: [stderr:16]: Content-Type: applications/json
+[finest]: [stderr:17]: Content-Length: 48
+[finest]: [stderr:18]: Connection: keep-alive
+[finest]: [stderr:19]: 
+[finest]: [stderr:20]: {"_id":"new_key","_rev":"1","Value":"new_value"}<<
+[finer]: Testing for string "HTTP/1.1 200 OK" in process output.
+[finer]: String found in line 14 of standard error.
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is an erroneous GET operation performed correctly?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 17712] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 localhost 17712 ERR_GET] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: it is a null
+[finest]: [stdout:2]: Correct value returned
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String found in line 2 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[warning]: Unable to continue recording process output! (Stream closed)
+[finest]: [stderr:1]: HTTP: GET /no_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: GET request for "no_key"
+[finest]: [stderr:3]: NoSQL (GET): "no_key" does not exist in the database
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 404 Not Found
+[finest]: [stderr:5]: Content-Type: applications/json
+[finest]: [stderr:6]: Content-Length: 72
+[finest]: [stderr:7]: Connection: keep-alive
+[finest]: [stderr:8]: 
+[finest]: [stderr:9]: {"error":"not found","reason":"The key does not exist in the database."}<<
+[finer]: Testing for string "HTTP/1.1 404 Not Found" in process output.
+[finer]: String found in line 4 of standard error.
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is the PUT operation performed correctly?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 25732] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 localhost 25732 PUT] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "new_value"}
+[finest]: [stdout:2]: Correct value returned
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String found in line 2 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="new_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finer]: Testing for string "HTTP/1.1 201 Created" in process output.
+[finer]: String found in line 4 of standard error.
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is an erroneous PUT operation performed correctly?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 10054] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 localhost 10054 ERR_PUT] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "new_value"}
+[finest]: [stdout:2]: put send:{"Value": "new_value"}
+[finest]: [stdout:3]: Correct value returned
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String found in line 3 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="new_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:13]: NoSQL (PUT): Adding to the database "new_key"="new_value".
+[finest]: [stderr:14]: NoSQL (PUT): Document update conflict.
+[finest]: [stderr:15]: SENDING >>HTTP/1.1 409 Conflict
+[finest]: [stderr:16]: Content-Type: applications/json
+[finest]: [stderr:17]: Content-Length: 57
+[finest]: [stderr:18]: Connection: keep-alive
+[finest]: [stderr:19]: 
+[finest]: [stderr:20]: {"error":"conflict","reason":"Document update conflict."}<<
+[finer]: Testing for string "HTTP/1.1 409 Conflict" in process output.
+[finer]: String found in line 15 of standard error.
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is an UPDATE operation performed correctly?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 11840] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 localhost 11840 UPDATE] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "old_value"}
+[finest]: [stdout:2]: update send:{"Value": "new_value", "_rev": "1"}
+[finest]: [stdout:3]: update rec body is :{"ok":true,"id":"new_key","rev":"2"}
+[finest]: [stdout:4]: recv body is ok
+[finest]: [stdout:5]: revision number is:2!!!!
+[finest]: [stdout:6]: Correct value returned
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String found in line 6 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="old_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:13]: NoSQL (PUT): Updating database "new_key"="new_value" using revision 1.
+[finest]: [stderr:14]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:15]: Etag: "2"
+[finest]: [stderr:16]: Content-Type: applications/json
+[finest]: [stderr:17]: Content-Length: 36
+[finest]: [stderr:18]: Connection: keep-alive
+[finest]: [stderr:19]: 
+[finest]: [stderr:20]: {"ok":true,"id":"new_key","rev":"2"}<<
+[finer]: Testing for string "HTTP/1.1 201 Created" in process output.
+[finer]: String found in line 4 of standard error.
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is a DELETE operation performed correctly?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 16718] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 localhost 16718 DELETE] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "old_value"}
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String was not found in process output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Stream closed)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="old_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: DELETE /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: DELETE request for "new_key"
+[finest]: [stderr:13]: NoSQL (DELETE): Deleting "new_key" using revision 0.
+[finest]: [stderr:14]: NoSQL (DELETE): Revision number was out of date.SENDING >>HTTP/1.1 409 Conflict
+[finest]: [stderr:15]: Content-Type: applications/json
+[finest]: [stderr:16]: Content-Length: 64
+[finest]: [stderr:17]: Connection: keep-alive
+[finest]: [stderr:18]: 
+[finest]: [stderr:19]: {"error":"conflict","reason":"Revision number was out of date."}<<
+[finer]: Running command [mpx_client-autograde/example_nosql_server 28378] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 127.0.0.1 28378 DELETE] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "old_value"}
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String was not found in process output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="old_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: DELETE /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: DELETE request for "new_key"
+[finest]: [stderr:13]: NoSQL (DELETE): Deleting "new_key" using revision 0.
+[finest]: [stderr:14]: NoSQL (DELETE): Revision number was out of date.SENDING >>HTTP/1.1 409 Conflict
+[finest]: [stderr:15]: Content-Type: applications/json
+[finest]: [stderr:16]: Content-Length: 64
+[finest]: [stderr:17]: Connection: keep-alive
+[finest]: [stderr:18]: 
+[finest]: [stderr:19]: {"error":"conflict","reason":"Revision number was out of date."}<<
+[finer]: Running command [mpx_client-autograde/example_nosql_server 16132] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 127.0.0.1 16132 DELETE] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "old_value"}
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String was not found in process output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[warning]: Unable to continue recording process output! (Stream closed)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="old_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: DELETE /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: DELETE request for "new_key"
+[finest]: [stderr:13]: NoSQL (DELETE): Deleting "new_key" using revision 0.
+[finest]: [stderr:14]: NoSQL (DELETE): Revision number was out of date.SENDING >>HTTP/1.1 409 Conflict
+[finest]: [stderr:15]: Content-Type: applications/json
+[finest]: [stderr:16]: Content-Length: 64
+[finest]: [stderr:17]: Connection: keep-alive
+[finest]: [stderr:18]: 
+[finest]: [stderr:19]: {"error":"conflict","reason":"Revision number was out of date."}<<
+[fine]: Launching element-specific code for "MPx (Client)", "MPx (Client)", "MPx (Client)", "Is an erroneous DELETE operation performed correctly?"...
+[finer]: Running command [mpx_client-autograde/example_nosql_server 29489] with a timeout of 15000ms.
+[finer]: Running command [mpx_client-autograde/test2 localhost 29489 ERR_DELETE] with a timeout of 15000ms.
+[finer]: Completed execution of "mpx_client-autograde/test2" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "old_value"}
+[finest]: [stdout:2]: Correct value returned
+[finer]: Testing for string "Correct value returned" in process output.
+[finer]: String found in line 2 of standard output.
+[config]: Allowing the autograder to kill the server; this will result in autograder errors that are expected.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="old_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: DELETE /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: DELETE request for "new_key"
+[finest]: [stderr:13]: NoSQL (DELETE): Deleting "new_key" using revision 0.
+[finest]: [stderr:14]: NoSQL (DELETE): Revision number was out of date.SENDING >>HTTP/1.1 409 Conflict
+[finest]: [stderr:15]: Content-Type: applications/json
+[finest]: [stderr:16]: Content-Length: 64
+[finest]: [stderr:17]: Connection: keep-alive
+[finest]: [stderr:18]: 
+[finest]: [stderr:19]: {"error":"conflict","reason":"Revision number was out of date."}<<
+[finer]: Testing for string "HTTP/1.1 409 Conflict" in process output.
+[finer]: String found in line 14 of standard error.
+[fine]: Launching memory grader code for "MPx (Client)"...
+[finer]: Running command [valgrind --leak-check=full --show-reachable=yes --num-callers=20 --child-silent-after-fork=yes mpx_client-autograde/test2 localhost 11461 GET] with a timeout of 10000ms.
+[finer]: Running command [mpx_client-autograde/example_nosql_server 11461] with a timeout of 15000ms.
+[finer]: Completed execution of "valgrind" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "new_value"}
+[finest]: [stdout:2]: string value is:new_value
+[finest]: [stdout:3]: revision number is:1
+[finest]: [stdout:4]: return value is:new_value
+[finest]: [stdout:5]: Correct value returned
+[finest]: [stderr:1]: ==3110== Memcheck, a memory error detector
+[finest]: [stderr:2]: ==3110== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+[finest]: [stderr:3]: ==3110== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+[finest]: [stderr:4]: ==3110== Command: mpx_client-autograde/test2 localhost 11461 GET
+[finest]: [stderr:5]: ==3110== 
+[finest]: [stderr:6]: ==3110== Invalid read of size 8
+[finest]: [stderr:7]: ==3110==    at 0x404A3B: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:8]: ==3110==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:9]: ==3110==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:10]: ==3110==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:11]: ==3110==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:12]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:13]: ==3110==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:14]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:15]: ==3110==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:16]: ==3110==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:17]: ==3110==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:18]: ==3110==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:19]: ==3110==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:20]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:21]: ==3110==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:22]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:23]: ==3110== 
+[finest]: [stderr:24]: ==3110== Invalid read of size 8
+[finest]: [stderr:25]: ==3110==    at 0x404A49: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:26]: ==3110==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:27]: ==3110==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:28]: ==3110==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:29]: ==3110==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:30]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:31]: ==3110==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:32]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:33]: ==3110==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:34]: ==3110==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:35]: ==3110==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:36]: ==3110==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:37]: ==3110==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:38]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:39]: ==3110==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:40]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:41]: ==3110== 
+[finest]: [stderr:42]: ==3110== Invalid write of size 8
+[finest]: [stderr:43]: ==3110==    at 0x404A55: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:44]: ==3110==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:45]: ==3110==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:46]: ==3110==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:47]: ==3110==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:48]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:49]: ==3110==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:50]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:51]: ==3110==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:52]: ==3110==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:53]: ==3110==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:54]: ==3110==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:55]: ==3110==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:56]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:57]: ==3110==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:58]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:59]: ==3110== 
+[finest]: [stderr:60]: ==3110== Invalid read of size 8
+[finest]: [stderr:61]: ==3110==    at 0x404A5D: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:62]: ==3110==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:63]: ==3110==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:64]: ==3110==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:65]: ==3110==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:66]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:67]: ==3110==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:68]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:69]: ==3110==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:70]: ==3110==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:71]: ==3110==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:72]: ==3110==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:73]: ==3110==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:74]: ==3110==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:75]: ==3110==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:76]: ==3110==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:77]: ==3110== 
+[finest]: [stderr:78]: ==3110== 
+[finest]: [stderr:79]: ==3110== HEAP SUMMARY:
+[finest]: [stderr:80]: ==3110==     in use at exit: 0 bytes in 0 blocks
+[finest]: [stderr:81]: ==3110==   total heap usage: 81 allocs, 81 frees, 3,887 bytes allocated
+[finest]: [stderr:82]: ==3110== 
+[finest]: [stderr:83]: ==3110== All heap blocks were freed -- no leaks are possible
+[finest]: [stderr:84]: ==3110== 
+[finest]: [stderr:85]: ==3110== For counts of detected and suppressed errors, rerun with: -v
+[finest]: [stderr:86]: ==3110== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 6 from 6)
+[finer]: Testing for string "All heap blocks were freed -- no leaks are possible" in process output.
+[finer]: String found in line 83 of standard error.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[finer]: Running command [valgrind --leak-check=full --show-reachable=yes --num-callers=20 --child-silent-after-fork=yes mpx_client-autograde/test2 127.0.0.1 11461 GET] with a timeout of 10000ms.
+[finer]: Completed execution of "valgrind" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "new_value"}
+[finest]: [stdout:2]: string value is:new_value
+[finest]: [stdout:3]: revision number is:1
+[finest]: [stdout:4]: return value is:new_value
+[finest]: [stdout:5]: Correct value returned
+[finest]: [stderr:1]: ==3122== Memcheck, a memory error detector
+[finest]: [stderr:2]: ==3122== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+[finest]: [stderr:3]: ==3122== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+[finest]: [stderr:4]: ==3122== Command: mpx_client-autograde/test2 127.0.0.1 11461 GET
+[finest]: [stderr:5]: ==3122== 
+[finest]: [stderr:6]: ==3122== Invalid read of size 8
+[finest]: [stderr:7]: ==3122==    at 0x404A3B: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:8]: ==3122==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:9]: ==3122==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:10]: ==3122==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:11]: ==3122==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:12]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:13]: ==3122==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:14]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:15]: ==3122==  Address 0x4c37298 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:16]: ==3122==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:17]: ==3122==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:18]: ==3122==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:19]: ==3122==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:20]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:21]: ==3122==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:22]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:23]: ==3122== 
+[finest]: [stderr:24]: ==3122== Invalid read of size 8
+[finest]: [stderr:25]: ==3122==    at 0x404A49: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:26]: ==3122==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:27]: ==3122==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:28]: ==3122==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:29]: ==3122==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:30]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:31]: ==3122==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:32]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:33]: ==3122==  Address 0x4c37298 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:34]: ==3122==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:35]: ==3122==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:36]: ==3122==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:37]: ==3122==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:38]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:39]: ==3122==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:40]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:41]: ==3122== 
+[finest]: [stderr:42]: ==3122== Invalid write of size 8
+[finest]: [stderr:43]: ==3122==    at 0x404A55: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:44]: ==3122==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:45]: ==3122==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:46]: ==3122==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:47]: ==3122==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:48]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:49]: ==3122==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:50]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:51]: ==3122==  Address 0x4c37298 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:52]: ==3122==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:53]: ==3122==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:54]: ==3122==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:55]: ==3122==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:56]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:57]: ==3122==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:58]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:59]: ==3122== 
+[finest]: [stderr:60]: ==3122== Invalid read of size 8
+[finest]: [stderr:61]: ==3122==    at 0x404A5D: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:62]: ==3122==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:63]: ==3122==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:64]: ==3122==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:65]: ==3122==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:66]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:67]: ==3122==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:68]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:69]: ==3122==  Address 0x4c37298 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:70]: ==3122==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:71]: ==3122==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:72]: ==3122==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:73]: ==3122==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:74]: ==3122==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:75]: ==3122==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:76]: ==3122==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:77]: ==3122== 
+[finest]: [stderr:78]: ==3122== 
+[finest]: [stderr:79]: ==3122== HEAP SUMMARY:
+[finest]: [stderr:80]: ==3122==     in use at exit: 0 bytes in 0 blocks
+[finest]: [stderr:81]: ==3122==   total heap usage: 76 allocs, 76 frees, 3,898 bytes allocated
+[finest]: [stderr:82]: ==3122== 
+[finest]: [stderr:83]: ==3122== All heap blocks were freed -- no leaks are possible
+[finest]: [stderr:84]: ==3122== 
+[finest]: [stderr:85]: ==3122== For counts of detected and suppressed errors, rerun with: -v
+[finest]: [stderr:86]: ==3122== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 6 from 6)
+[finer]: Testing for string "All heap blocks were freed -- no leaks are possible" in process output.
+[finer]: String found in line 83 of standard error.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[warning]: Unable to continue recording process output! (Stream closed)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="new_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: GET /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: GET request for "new_key"
+[finest]: [stderr:13]: NoSQL (GET): "new_key" contains the value "new_value" (revision: 1)
+[finest]: [stderr:14]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:15]: Etag: "1"
+[finest]: [stderr:16]: Content-Type: applications/json
+[finest]: [stderr:17]: Content-Length: 48
+[finest]: [stderr:18]: Connection: keep-alive
+[finest]: [stderr:19]: 
+[finest]: [stderr:20]: {"_id":"new_key","_rev":"1","Value":"new_value"}<<
+[finest]: [stderr:21]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:22]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:23]: NoSQL (PUT): Adding to the database "new_key"="new_value".
+[finest]: [stderr:24]: NoSQL (PUT): Document update conflict.
+[finest]: [stderr:25]: SENDING >>HTTP/1.1 409 Conflict
+[finest]: [stderr:26]: Content-Type: applications/json
+[finest]: [stderr:27]: Content-Length: 57
+[finest]: [stderr:28]: Connection: keep-alive
+[finest]: [stderr:29]: 
+[finest]: [stderr:30]: {"error":"conflict","reason":"Document update conflict."}<<
+[finest]: [stderr:31]: HTTP: GET /new_key HTTP/1.1
+[finest]: [stderr:32]: NoSQL: GET request for "new_key"
+[finest]: [stderr:33]: NoSQL (GET): "new_key" contains the value "new_value" (revision: 1)
+[finest]: [stderr:34]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:35]: Etag: "1"
+[finest]: [stderr:36]: Content-Type: applications/json
+[finest]: [stderr:37]: Content-Length: 48
+[finest]: [stderr:38]: Connection: keep-alive
+[finest]: [stderr:39]: 
+[finest]: [stderr:40]: {"_id":"new_key","_rev":"1","Value":"new_value"}<<
+[fine]: Launching memory grader code for "MPx (Client)"...
+[finer]: Running command [valgrind --leak-check=full --show-reachable=yes --num-callers=20 --child-silent-after-fork=yes mpx_client-autograde/test2 localhost 22828 GET] with a timeout of 10000ms.
+[finer]: Running command [mpx_client-autograde/example_nosql_server 22828] with a timeout of 15000ms.
+[finer]: Completed execution of "valgrind" with exit code = 0.
+[finest]: [stdout:1]: put send:{"Value": "new_value"}
+[finest]: [stdout:2]: string value is:new_value
+[finest]: [stdout:3]: revision number is:1
+[finest]: [stdout:4]: return value is:new_value
+[finest]: [stdout:5]: Correct value returned
+[finest]: [stderr:1]: ==3151== Memcheck, a memory error detector
+[finest]: [stderr:2]: ==3151== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+[finest]: [stderr:3]: ==3151== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+[finest]: [stderr:4]: ==3151== Command: mpx_client-autograde/test2 localhost 22828 GET
+[finest]: [stderr:5]: ==3151== 
+[finest]: [stderr:6]: ==3151== Invalid read of size 8
+[finest]: [stderr:7]: ==3151==    at 0x404A3B: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:8]: ==3151==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:9]: ==3151==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:10]: ==3151==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:11]: ==3151==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:12]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:13]: ==3151==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:14]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:15]: ==3151==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:16]: ==3151==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:17]: ==3151==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:18]: ==3151==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:19]: ==3151==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:20]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:21]: ==3151==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:22]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:23]: ==3151== 
+[finest]: [stderr:24]: ==3151== Invalid read of size 8
+[finest]: [stderr:25]: ==3151==    at 0x404A49: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:26]: ==3151==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:27]: ==3151==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:28]: ==3151==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:29]: ==3151==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:30]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:31]: ==3151==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:32]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:33]: ==3151==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:34]: ==3151==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:35]: ==3151==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:36]: ==3151==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:37]: ==3151==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:38]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:39]: ==3151==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:40]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:41]: ==3151== 
+[finest]: [stderr:42]: ==3151== Invalid write of size 8
+[finest]: [stderr:43]: ==3151==    at 0x404A55: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:44]: ==3151==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:45]: ==3151==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:46]: ==3151==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:47]: ==3151==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:48]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:49]: ==3151==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:50]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:51]: ==3151==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:52]: ==3151==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:53]: ==3151==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:54]: ==3151==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:55]: ==3151==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:56]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:57]: ==3151==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:58]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:59]: ==3151== 
+[finest]: [stderr:60]: ==3151== Invalid read of size 8
+[finest]: [stderr:61]: ==3151==    at 0x404A5D: json_decref (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:62]: ==3151==    by 0x404E6C: hashtable_do_clear (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:63]: ==3151==    by 0x4050D3: hashtable_close (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:64]: ==3151==    by 0x408321: json_delete_object (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:65]: ==3151==    by 0x409B51: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:66]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:67]: ==3151==    by 0x402803: datastore_get (libds.c:233)
+[finest]: [stderr:68]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:69]: ==3151==  Address 0x4c37418 is 8 bytes inside a block of size 24 free'd
+[finest]: [stderr:70]: ==3151==    at 0x4A063F0: free (vg_replace_malloc.c:446)
+[finest]: [stderr:71]: ==3151==    by 0x4076CE: jsonp_free (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:72]: ==3151==    by 0x4097A8: json_delete_string (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:73]: ==3151==    by 0x409B91: json_delete (in /class/cs241/private/mp/ag-full-sp13/mpx_client-autograde/test2)
+[finest]: [stderr:74]: ==3151==    by 0x402131: json_decref (jansson.h:107)
+[finest]: [stderr:75]: ==3151==    by 0x4027F7: datastore_get (libds.c:232)
+[finest]: [stderr:76]: ==3151==    by 0x4038FB: main (test2.c:69)
+[finest]: [stderr:77]: ==3151== 
+[finest]: [stderr:78]: ==3151== 
+[finest]: [stderr:79]: ==3151== HEAP SUMMARY:
+[finest]: [stderr:80]: ==3151==     in use at exit: 0 bytes in 0 blocks
+[finest]: [stderr:81]: ==3151==   total heap usage: 81 allocs, 81 frees, 3,887 bytes allocated
+[finest]: [stderr:82]: ==3151== 
+[finest]: [stderr:83]: ==3151== All heap blocks were freed -- no leaks are possible
+[finest]: [stderr:84]: ==3151== 
+[finest]: [stderr:85]: ==3151== For counts of detected and suppressed errors, rerun with: -v
+[finest]: [stderr:86]: ==3151== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 6 from 6)
+[finer]: Testing for string "ERROR SUMMARY: 0 errors from 0 contexts" in process output.
+[finer]: String was not found in process output.
+[finer]: Testing for string "ERROR SUMMARY: 1 errors from 1 contexts" in process output.
+[finer]: String was not found in process output.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[finer]: Testing for string "pthread" in process output.
+[finer]: String was not found in process output.
+[severe]: Process was forcibly killed by the autograder after exceeding the timeout period.
+[warning]: Unable to continue recording process output! (Stream closed)
+[warning]: Unable to continue recording process output! (Bad file descriptor)
+[finer]: Completed execution of "mpx_client-autograde/example_nosql_server" with exit code = 143.
+[finest]: [stderr:1]: HTTP: PUT /new_key HTTP/1.1
+[finest]: [stderr:2]: NoSQL: PUT request for "new_key"
+[finest]: [stderr:3]: NoSQL (PUT): Adding to the database "new_key"="new_value".
+[finest]: [stderr:4]: SENDING >>HTTP/1.1 201 Created
+[finest]: [stderr:5]: Etag: "1"
+[finest]: [stderr:6]: Content-Type: applications/json
+[finest]: [stderr:7]: Content-Length: 36
+[finest]: [stderr:8]: Connection: keep-alive
+[finest]: [stderr:9]: 
+[finest]: [stderr:10]: {"ok":true,"id":"new_key","rev":"1"}<<
+[finest]: [stderr:11]: HTTP: GET /new_key HTTP/1.1
+[finest]: [stderr:12]: NoSQL: GET request for "new_key"
+[finest]: [stderr:13]: NoSQL (GET): "new_key" contains the value "new_value" (revision: 1)
+[finest]: [stderr:14]: SENDING >>HTTP/1.1 200 OK
+[finest]: [stderr:15]: Etag: "1"
+[finest]: [stderr:16]: Content-Type: applications/json
+[finest]: [stderr:17]: Content-Length: 48
+[finest]: [stderr:18]: Connection: keep-alive
+[finest]: [stderr:19]: 
+[finest]: [stderr:20]: {"_id":"new_key","_rev":"1","Value":"new_value"}<<
+[warning]: Not all memory was freed by target program!
+[finer]: Running command [make clean] with a timeout of 60000ms.
+[finer]: Completed execution of "make" with exit code = 0.
+[finest]: [stdout:1]: rm -rf *.o *.d test1
+[fine]: The assignment-specific grade() method completed successfully.
+[info]: The submission in "../../svn/cs241/cliu78" for assignment "mpx_client" has finished grading. Running final tasks...
